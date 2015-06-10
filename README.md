@@ -1,2 +1,2 @@
-# Mega_Project_Solutions
-Solutions to the Mega Project List by @karan
+# Mega Project Solutions
+This repository contains the solutions for the Mega Project List created by @karan
