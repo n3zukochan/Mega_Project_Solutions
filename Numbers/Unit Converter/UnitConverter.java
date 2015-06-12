@@ -9,7 +9,6 @@
 import java.util.*;
 
 public class UnitConverter {
-    // Should I make this a constant?
     public static final Map<String, String> MEASUREMENT;
     static {
         MEASUREMENT = new HashMap<String, String>();
@@ -24,7 +23,7 @@ public class UnitConverter {
 
         while (flag) {
             String answer = "";
-            convert(input);
+            getFactory(input);
             System.out.print("Do you want to choose another type of measurement? Yes(y) or No(n)? ");
             answer = input.nextLine();
             if (answer.toLowerCase().startsWith("n")) {
@@ -40,7 +39,8 @@ public class UnitConverter {
         System.out.println();
 
         System.out.println("This program converts available units between one another");
-        System.out.println("of a given type of measurement.");
+        System.out.println("of a given type of measurement. All the measurements and");
+        System.out.println("units are displayed in this format: name (user input).");
         System.out.println();
 
         System.out.println("The types of measurement that can be used are listed below");
@@ -48,9 +48,12 @@ public class UnitConverter {
         System.out.println();
     }
 
-    public static void convert(Scanner input) {
+    /**
+     */
+    public static void getFactory(Scanner input) {
         String type = "";
         boolean temp = true;
+        ConverterFactory converterFactory = new ConverterFactory();
 
         System.out.print("What type of measurement do you want to use? ");
         type = input.nextLine();
@@ -61,60 +64,25 @@ public class UnitConverter {
             type = input.nextLine();
         }
 
+        Converter converter = converterFactory.getConverter(MEASUREMENT.get(type));
+
         while (temp) {
             String reply = "";
 
             System.out.println("Conversion type will be " + MEASUREMENT.get(type));
             System.out.println("These are your choices of units:");
-            switch (type) {
-                case "temp":
-                    System.out.printf("The value after conversion is %.3f", tempConverter(input));
-                    System.out.println();
-                    break;
-                default:
-                    break;
-            }
+
+            converter.unitsInfo();
+            converter.userInput();
+
+            System.out.printf("The value after conversion is %.3f", converter.convert());
+            System.out.println();
 
             System.out.print("Do you want to convert another unit? Yes(y) or No(n)? "); 
             reply = input.nextLine();
-            System.out.println(reply);
             if (reply.toLowerCase().startsWith("n")) {
                 temp = false;
             }
         }
-    }
-
-    public static double tempConverter(Scanner input) {
-        String fromUnit = "";
-        String toUnit = "";
-        double value = 0;
-
-        System.out.println("    - Celsius (c)"); 
-        System.out.println("    - Fahrenheit (f)");
-        System.out.println("    - Kelvin (k)");
-        System.out.println();
-
-        System.out.println("You want to convert");
-        System.out.print("from: ");
-        fromUnit = input.nextLine();
-        System.out.print("to:   ");
-        toUnit = input.nextLine();
-        System.out.print("The value is ");
-        value = input.nextDouble();
-        input.nextLine();
-
-        if (fromUnit.equals("c")) {
-            value += 273.15;
-        } else if (fromUnit.equals("f")) {
-            value = (value - 32) * 5 / 9 + 273.15;
-        }
-
-        if (toUnit.equals("c")) {
-            value -= 273.15;
-        } else if (toUnit.equals("f")) {
-            value = (value - 273.15) * 9 / 5 + 32;
-        }
-
-        return value;
     }
 }
