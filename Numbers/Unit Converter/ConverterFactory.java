@@ -15,10 +15,11 @@ public class ConverterFactory {
             throw new IllegalArgumentException();
         }
 
-        if (measurementType.equalsIgnoreCase("temperature")) {
+        if (measurementType.equals("temperature")) {
             return new Temperature();
+        } else if (measurementType.equals("length")) {
+            return new Length();
         }
-
         return null;
     }
 }

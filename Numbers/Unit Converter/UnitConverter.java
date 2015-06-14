@@ -13,6 +13,7 @@ public class UnitConverter {
     static {
         MEASUREMENT = new HashMap<String, String>();
         MEASUREMENT.put("temp", "temperature");
+        MEASUREMENT.put("len", "length");
     };
 
     public static void main(String[] args) {
@@ -39,14 +40,9 @@ public class UnitConverter {
      */
     public static void intro() {
         System.out.println();
-
         System.out.println("This program converts available units between one another");
         System.out.println("of a given type of measurement. All the measurements and");
         System.out.println("units are displayed in this format: name (user input).");
-        System.out.println();
-
-        System.out.println("The types of measurement that can be used are listed below");
-        System.out.println("    - Temperature (temp)");
         System.out.println();
     }
 
@@ -55,6 +51,11 @@ public class UnitConverter {
     public static Converter getFactory(Scanner input) {
         String type = "";
         ConverterFactory converterFactory = new ConverterFactory();
+
+        System.out.println("The types of measurement that can be used are listed below");
+        System.out.println("    - Temperature (temp)");
+        System.out.println("    - Length (len)");
+        System.out.println();
 
         System.out.print("What type of measurement do you want to use? ");
         type = input.nextLine();

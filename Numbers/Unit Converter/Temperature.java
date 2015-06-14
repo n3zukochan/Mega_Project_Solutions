@@ -13,6 +13,7 @@ public class Temperature extends Converter {
     private String type;
 
     /**
+     * Initializes the Temperature constructor.
      */
     public Temperature() {
         this.type = "temperature";
