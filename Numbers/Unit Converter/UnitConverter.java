@@ -23,7 +23,9 @@ public class UnitConverter {
 
         while (flag) {
             String answer = "";
-            getFactory(input);
+
+            convertingProcess(input);
+
             System.out.print("Do you want to choose another type of measurement? Yes(y) or No(n)? ");
             answer = input.nextLine();
             if (answer.toLowerCase().startsWith("n")) {
@@ -50,9 +52,8 @@ public class UnitConverter {
 
     /**
      */
-    public static void getFactory(Scanner input) {
+    public static Converter getFactory(Scanner input) {
         String type = "";
-        boolean temp = true;
         ConverterFactory converterFactory = new ConverterFactory();
 
         System.out.print("What type of measurement do you want to use? ");
@@ -64,12 +65,19 @@ public class UnitConverter {
             type = input.nextLine();
         }
 
-        Converter converter = converterFactory.getConverter(MEASUREMENT.get(type));
+        return converterFactory.getConverter(MEASUREMENT.get(type));
+    }
+    
+    /**
+     */
+    public static void convertingProcess(Scanner input) {
+        Converter converter = getFactory(input);
+        boolean temp = true;
 
         while (temp) {
             String reply = "";
 
-            System.out.println("Conversion type will be " + MEASUREMENT.get(type));
+            System.out.println("Conversion type will be " + converter.getType());
             System.out.println("These are your choices of units:");
 
             converter.unitsInfo();

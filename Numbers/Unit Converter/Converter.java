@@ -15,6 +15,7 @@ public abstract class Converter {
     private String toUnit;
     private double value;
     private Scanner input;
+    private String type;
 
     /** 
      * Initializes the Converter object
@@ -24,6 +25,7 @@ public abstract class Converter {
         this.fromUnit = "";
         this.toUnit = "";
         this.value = 0;
+        this.type = "";
     }
     
     /**
@@ -42,6 +44,12 @@ public abstract class Converter {
      */
     public double getValue() {
         return this.value;
+    }
+
+    /**
+     */
+    public String getType() {
+        return this.type;
     }
 
     /**

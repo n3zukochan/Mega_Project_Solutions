@@ -10,6 +10,14 @@
 import java.util.*;
 
 public class Temperature extends Converter {
+    private String type;
+
+    /**
+     */
+    public Temperature() {
+        this.type = "temperature";
+    }
+
     /**
      */
     public void unitsInfo() {
