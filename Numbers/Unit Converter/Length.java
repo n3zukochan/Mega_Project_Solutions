@@ -10,16 +10,8 @@
 import java.util.*;
 
 public class Length extends Converter {
-    private String type;
-
     /**
-     * Initializes the Length constructor.
-     */
-    public Length() {
-        this.type = "length";
-    }
-
-    /**
+     * Print out the information of the length units
      */
     public void unitsInfo() {
         System.out.println("    - Kilometer (km)");
@@ -33,6 +25,9 @@ public class Length extends Converter {
     }
 
     /**
+     * Convert the unit from one type to another
+     *
+     * @return the value after converting
      */
     public double convert() {
         String fromUnit = getFromUnit();

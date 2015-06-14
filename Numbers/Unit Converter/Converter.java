@@ -15,7 +15,6 @@ public abstract class Converter {
     private String toUnit;
     private double value;
     private Scanner input;
-    private String type;
 
     /** 
      * Initializes the Converter object
@@ -25,34 +24,31 @@ public abstract class Converter {
         this.fromUnit = "";
         this.toUnit = "";
         this.value = 0;
-        this.type = "";
     }
     
     /**
+     * @return the unit that the user wants to convert from
      */
     public String getFromUnit() {
         return this.fromUnit;
     }
 
     /**
+     * @return the unit that the user wants to convert to
      */
     public String getToUnit() {
         return this.toUnit;
     }
 
     /**
+     * @return the value that the user wants to convert
      */
     public double getValue() {
         return this.value;
     }
 
     /**
-     */
-    public String getType() {
-        return this.type;
-    }
-
-    /**
+     * Ask the user for the conversion input
      */
     public void userInput() {
         System.out.println("You want to convert");
@@ -66,10 +62,14 @@ public abstract class Converter {
     }
 
     /**
+     * Print out the information of the measurement type
      */
     public abstract void unitsInfo(); 
 
     /**
+     * Convert the unit from one type to another
+     *
+     * @return the value after converting
      */
     public abstract double convert();
 }

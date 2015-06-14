@@ -10,16 +10,8 @@
 import java.util.*;
 
 public class Temperature extends Converter {
-    private String type;
-
     /**
-     * Initializes the Temperature constructor.
-     */
-    public Temperature() {
-        this.type = "temperature";
-    }
-
-    /**
+     * Print out the information of the temperature units
      */
     public void unitsInfo() {
         System.out.println("    - Celsius (c)"); 
@@ -29,6 +21,9 @@ public class Temperature extends Converter {
     }
 
     /**
+     * Convert the unit from one type to another
+     *
+     * @return the value after converting
      */
     public double convert() {
         String fromUnit = getFromUnit();
