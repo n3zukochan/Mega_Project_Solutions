@@ -5,3 +5,10 @@ The types of measurement that can be used are:
 - Length
 - Mass
 - Speed
+
+To do:
+- Volume
+- Area
+- Fuel Consumption
+- Time
+- Digital Storage
