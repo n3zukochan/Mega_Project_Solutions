@@ -16,14 +16,14 @@ public class Mass extends Converter {
     /**
      * Initialize the Mass constructor
      */
-    public Length() {
+    public Mass() {
         units = new String[] {
             "ton", "kg", "g", "mg", "lb", "oz"
-        }
+        };
 
         unitConstants = new double[] {
             1000, 1, 0.001, 0.000001, 0.45359237, 0.0283495
-        }
+        };
     }
 
     /**

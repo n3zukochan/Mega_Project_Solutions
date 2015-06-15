@@ -19,11 +19,11 @@ public class Length extends Converter {
     public Length() {
         units = new String[] {
             "km", "m", "cm", "mm", "mi", "yd", "ft", "in"
-        }
+        };
 
         unitConstants = new double[] {
             1000, 1, 0.01, 0.001, 1609.344, 0.9144, 0.3048, 0.0254
-        }
+        };
     }
 
     /**
