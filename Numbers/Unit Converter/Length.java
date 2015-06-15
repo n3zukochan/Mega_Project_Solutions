@@ -10,6 +10,22 @@
 import java.util.*;
 
 public class Length extends Converter {
+    private String[] units;
+    private double[] unitConstants;
+
+    /**
+     * Initialize the Length constructor
+     */
+    public Length() {
+        units = new String[] {
+            "km", "m", "cm", "mm", "mi", "yd", "ft", "in"
+        }
+
+        unitConstants = new double[] {
+            1000, 1, 0.01, 0.001, 1609.344, 0.9144, 0.3048, 0.0254
+        }
+    }
+
     /**
      * Print out the information of the length units
      */
@@ -33,54 +49,19 @@ public class Length extends Converter {
         String fromUnit = getFromUnit();
         String toUnit = getToUnit();
         double value = getValue();
+        int fromIndex = 0;
+        int toIndex = 0;
 
-        switch (fromUnit) {
-            case "km":
-                value *= 1000;
-                break;
-            case "cm":
-                value /= 100;
-                break;
-            case "mm":
-                value /= 1000;
-                break;
-            case "mi":
-                value *= 5280 * 0.3048;
-                break;
-            case "yd":
-                value *= 0.9144;
-                break;
-            case "ft":
-                value *= 0.3048;
-                break;
-            case "in":
-                value *= 0.0254;
-                break;
-        }
+        for (int i = 0; i < units.length; i++) {
+            if (units[i].equals(fromUnit)) {
+                fromIndex = i;
+            }
 
-        switch (toUnit) {
-            case "km":
-                value /= 1000;
-                break;
-            case "cm":
-                value *= 100;
-                break;
-            case "mm":
-                value *= 1000;
-                break;
-            case "mi":
-                value = value / (5280 * 0.3048);
-                break;
-            case "yd":
-                value /= 0.9144;
-                break;
-            case "ft":
-                value /= 0.3048;
-                break;
-            case "in":
-                value /= 0.0254;
-                break;
+            if (units[i].equals(toUnit)) {
+                toIndex = i;
+            }
         }
+        value = value * unitConstants[fromIndex] / unitConstants[toIndex];
 
         return value;
     }
