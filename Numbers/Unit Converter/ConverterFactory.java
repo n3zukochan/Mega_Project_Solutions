@@ -19,7 +19,7 @@ public class ConverterFactory {
             return new Temperature();
         } else if (measurementType.equals("length")) {
             return new Length();
-        } else if (measurementType.equals("m")) {
+        } else if (measurementType.equals("mass")) {
             return new Mass();
         }
 
