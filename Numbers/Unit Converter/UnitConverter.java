@@ -14,6 +14,7 @@ public class UnitConverter {
         MEASUREMENT = new HashMap<String, String>();
         MEASUREMENT.put("temp", "temperature");
         MEASUREMENT.put("len", "length");
+        MEASUREMENT.put("m", "mass");
     };
 
     public static void main(String[] args) {
@@ -66,6 +67,7 @@ public class UnitConverter {
         System.out.println("The types of measurement that can be used are listed below");
         System.out.println("    - Temperature (temp)");
         System.out.println("    - Length (len)");
+        System.out.println("    - Mass (m)");
         System.out.println();
 
         System.out.print("What type of measurement do you want to use? ");

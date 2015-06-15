@@ -19,6 +19,8 @@ public class ConverterFactory {
             return new Temperature();
         } else if (measurementType.equals("length")) {
             return new Length();
+        } else if (measurementType.equals("m")) {
+            return new Mass();
         }
 
         return null;
