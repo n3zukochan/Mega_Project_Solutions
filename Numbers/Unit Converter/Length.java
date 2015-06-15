@@ -1,5 +1,5 @@
 /**
- * Program: Temperature
+ * Program: Length
  * Author: Hiep Can
  * Date: 06/12/2015
  *
