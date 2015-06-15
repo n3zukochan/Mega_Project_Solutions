@@ -15,6 +15,7 @@ public class UnitConverter {
         MEASUREMENT.put("temp", "temperature");
         MEASUREMENT.put("len", "length");
         MEASUREMENT.put("m", "mass");
+        MEASUREMENT.put("spd", "speed");
     };
 
     public static void main(String[] args) {
@@ -68,6 +69,7 @@ public class UnitConverter {
         System.out.println("    - Temperature (temp)");
         System.out.println("    - Length (len)");
         System.out.println("    - Mass (m)");
+        System.out.println("    - Speed (spd)");
         System.out.println();
 
         System.out.print("What type of measurement do you want to use? ");

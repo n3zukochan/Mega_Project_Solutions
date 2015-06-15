@@ -4,3 +4,4 @@ The types of measurement that can be used are:
 - Temperature
 - Length
 - Mass
+- Speed

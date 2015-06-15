@@ -21,6 +21,8 @@ public class ConverterFactory {
             return new Length();
         } else if (measurementType.equals("mass")) {
             return new Mass();
+        } else if (measurementType.equals("speed")) {
+            return new Speed();
         }
 
         return null;
